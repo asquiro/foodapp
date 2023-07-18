@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodapp/screens/order_screen.dart';
+import 'package:foodapp/screens/deliver_screen.dart';
+
 import 'package:foodapp/screens/resuables/button_widget.dart';
 
 class CheckOutScreen extends StatefulWidget {
@@ -126,6 +127,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               trailing: Radio(
                 value: Payment.paypal,
                 groupValue: _payment,
+                hoverColor: Colors.blueAccent,
                 onChanged: (Payment? value) {
                   setState(() {
                     _payment = value;
@@ -140,6 +142,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               trailing: Radio(
                 value: Payment.mastercard,
                 groupValue: _payment,
+                hoverColor: Colors.blueAccent,
                 onChanged: (Payment? value) {
                   setState(
                     () {
@@ -156,6 +159,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               trailing: Radio(
                 value: Payment.visa,
                 groupValue: _payment,
+                hoverColor: Colors.blueAccent,
                 onChanged: (Payment? value) {
                   setState(
                     () {
@@ -194,11 +198,11 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
             ),
             Center(
               child: BottonWidget(
-                text: 'Continue',
+                text: 'Place Order',
                 ontap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const OrderScreen(),
+                      builder: (context) => const DeliveryScreen(),
                     ),
                   );
                 },
